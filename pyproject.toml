@@ -1,0 +1,31 @@
+[project]
+name = "viacep-api"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Felipe Ribeiro Rodrigues dos Santos",email = "feliperrsdev@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.14,<4.0"
+dependencies = [
+    "fastapi[standard] (>=0.132.0,<0.133.0)",
+    "taskipy (>=1.14.1,<2.0.0)",
+    "ruff (>=0.15.2,<0.16.0)"
+]
+
+[tool.poetry]
+packages = [{include = "viacep_api", from = "src"}]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff.lint]
+preview = true
+select = ['I','F','E','W','PL','PT']
+
+[tool.taskipy.tasks]
+lint = 'ruff check'
+pre_format = 'ruff check --fix'
+format = 'ruff format'
+run = 'fastapi dev src/main.py'
