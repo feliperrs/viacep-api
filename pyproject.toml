@@ -10,7 +10,8 @@ requires-python = ">=3.14,<4.0"
 dependencies = [
     "fastapi[standard] (>=0.132.0,<0.133.0)",
     "taskipy (>=1.14.1,<2.0.0)",
-    "ruff (>=0.15.2,<0.16.0)"
+    "ruff (>=0.15.2,<0.16.0)",
+    "requests (>=2.32.5,<3.0.0)",
 ]
 
 [tool.poetry]
